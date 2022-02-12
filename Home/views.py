@@ -5,7 +5,7 @@ def homePage(request):
     databaseInfo = homeModel.objects
     i = 10
     return render(request, 
-                "./index.html",
+                "index.html",
                 {"jobs": databaseInfo,
                 "x": i},
                 
