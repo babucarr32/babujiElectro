@@ -56,7 +56,7 @@ ROOT_URLCONF = 'Babujii.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ["C:\Users\User\babujii\Babujii\app\Templates\home.html"],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
