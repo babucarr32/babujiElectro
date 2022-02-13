@@ -18,11 +18,11 @@ def productInfo(request, pk):
     for i in databaseInfo:
         if i.id == pk:
             productName = i.name
-            productImage = i.image.url
+            productImage = i.image
             productPrice = i.price
             productDetail = i.detail
     return render(request, 
-            "jobs/productInfo.html",
+            "productInfo/productInfo.html",
             {"x": databaseInfo,
             "productName": productName,
             "productImage": productImage,
