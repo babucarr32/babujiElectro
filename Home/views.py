@@ -1,12 +1,8 @@
 from django.shortcuts import render
-from .models import homeModel
+from django.http import HttpResponse
 
-def homePage(request):
-    databaseInfo = homeModel.objects
+def homePage(request,):
+    databaseInfo = "homeModel.objects"
     i = 10
-    return render(request, 
-                "index.html",
-                {"jobs": databaseInfo,
-                "x": i},
-                
+    return render(request, HttpResponse("Hello world")
                 )
