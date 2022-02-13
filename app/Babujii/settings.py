@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'babuji-electronics.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'Home.apps.HomeConfig',
+    'Home.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
