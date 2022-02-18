@@ -25,4 +25,5 @@ urlpatterns = [
     path('', Home.views.homePage, name="homePage"),
     path("admin/", admin.site.urls),
     path("<int:pk>/productInfo/", Home.views.productInfo),
+    path("search/", Home.views.searchItem, name="search"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

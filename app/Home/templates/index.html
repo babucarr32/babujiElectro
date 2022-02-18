@@ -45,6 +45,8 @@
         margin-right: 20px;
       }
       
+      .HeaderItemsMain{}
+
       .HeaderItems{
         display: flex;
         justify-content: right;
@@ -52,6 +54,42 @@
 
       .HItems{
         margin-right: 20px;
+        margin-top: 17px;
+      }
+
+      .searchForm{
+        display: flex;
+        align-items: center;
+        justify-content: right;
+      }
+
+      .searchBar{
+        height: 40px;
+        background: rgba(0, 0, 0, .2);
+        color: rgba(255, 255, 255, .7);
+        background-image: url("{% static 'outline_search_white_24dp.png' %}");
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        width: 65%;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin: 0px 10px 10px 0px;
+      }
+
+      .searchIcon{
+        margin-top: 10px; 
+        background: none; 
+        color: white;
+        border: none;
+        
+      }
+
+      .searchButton{
+        background: none; 
+        color: white;
+        border: none;
+        margin: 0px 30px -10px 0px;
       }
 
       .mainBg {
@@ -116,10 +154,16 @@
 <body>
     
 <header class="site-header sticky-top py-1">
-  <nav class="HeaderItems">
-    <a class="HItems" href="#" style="margin-top: 10px;"> Features </a>
-    <a href="#" class="material-icons style" style="margin-top: 10px;"> shopping_cart </a>
-  </nav>
+  <div class="searchForm">
+    <nav class="HeaderItems">
+      <form class="searchForm" action="{% url 'search' %}">
+        <input class="searchBar" name="itemName" type="text" placeholder="search">
+        <button type="submit" class="searchButton"> search </button>
+      </form>
+      <a class="HItems" href="#"> Features </a>
+      <a href="#" class="material-icons style HItems"> shopping_cart </a>
+    </nav>
+  </div>
 </header>
 
 <main>

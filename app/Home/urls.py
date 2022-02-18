@@ -4,11 +4,11 @@ from django.urls import path
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
-import blog.views
+import views
 
 urlpatterns = [
-    path('', blog.views.homePage, name="homePage"),
+    path('', views.homePage, name="homePage"),
     path("admin/", admin.site.urls),
-    path("<int:pk>/productInfo/", blog.views.productInfo),
-    path("<int:pk>/cart/", blog.views.cart)
+    path("<int:pk>/productInfo/", views.productInfo),
+    path("<int:pk>/cart/", views.cart)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
