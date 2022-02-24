@@ -1,0 +1,93 @@
+{% load  static %}
+
+<style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+    @media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+    }
+
+    .site-header{
+        background-color: rgba(0, 0, 0, .85);
+    }
+    .site-header a {
+    color: #8e8e8e;
+    transition: color .15s ease-in-out;
+    }
+
+    .imageDiv{
+        position: relative;
+        width: 100%;
+        height: 90%;
+    }
+
+    img{
+        max-width: 100%;
+        height: 90%;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 5px;
+    }
+
+    .myName{
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, .25);
+        height: 50px;
+        padding-top: 5px;
+        font-family: 'Consolas';
+    }
+
+    .personalInfo{
+        padding: 20px;
+        background-color: rgba(0, 0, 0, .25);
+        font-family: 'Arial';
+    }
+
+</style>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>babuji</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> 
+        <link href="/docs/5.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">      
+    </head>
+<body>
+    <header class="site-header sticky-top py-1">
+        <nav class="container d-flex flex-column flex-md-row justify-content-between">
+            <a href="/" style="font-size: 20px; color: white;">BabuJi</a>
+          </a>
+    </header>
+
+    <main>
+        <div class="imageDiv">
+            <img src="{% static 'baboucarr.jpg' %}" alt="">
+        </div>
+        <h3 class="myName"> Baboucarr Badjie</h3> <br>
+        <p class="personalInfo">
+            
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer at auctor orci. Integer eu nisi nibh. Mauris eu lobortis neque. Aliquam eget facilisis turpis. Pellentesque ac diam dui. Ut id sollicitudin est. Nullam molestie eros non augue finibus, eget ultricies neque accumsan. Curabitur ut sem sit amet neque interdum placerat ultricies suscipit tellus. Integer odio nisl, varius quis sodales in, iaculis et erat. Nulla ut neque hendrerit nisl condimentum elementum. Morbi rhoncus laoreet orci, non elementum diam tempor et. Phasellus tempor quis neque vel tempor.
+            
+            Phasellus rhoncus, metus nec rutrum pulvinar, nisi odio porta elit, et dictum sem metus ac orci. Phasellus neque ipsum, accumsan in lectus eget, condimentum dignissim diam. Quisque nibh enim, dictum tempus nisl eleifend, consectetur accumsan augue. Vestibulum interdum lectus id tortor facilisis elementum. Aenean lorem sapien, rhoncus et dapibus a, aliquet quis velit. Aliquam sagittis dolor ac diam dictum scelerisque. Nunc semper, turpis sed mattis ultrices, metus diam tincidunt est, in bibendum purus augue at tortor. Cras ornare a turpis sagittis tincidunt. Fusce vel viverra ex. Maecenas consequat mollis justo quis auctor. Cras ut eleifend magna.
+            
+            Nullam sit amet ligula eleifend, dictum tortor nec, luctus lectus. Nam dignissim suscipit est vitae porttitor. Etiam metus leo, aliquet tempor neque vel, ornare tristique sapien. Suspendisse eu lorem et eros tincidunt condimentum ac eu metus. Morbi sagittis ac purus vel interdum. Suspendisse vitae convallis ante. Etiam libero justo, scelerisque eget efficitur quis, sollicitudin at orci. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ultricies purus ut justo pretium pulvinar. Cras leo magna, tristique eget suscipit eget, molestie at leo. Pellentesque efficitur tempus malesuada. In volutpat nibh in suscipit elementum. Quisque sed est mi. Morbi pretium sapien orci, pulvinar scelerisque est hendrerit in. Phasellus ultrices tellus ut tempus tincidunt. Vestibulum enim felis, sodales at posuere et, dictum id leo.
+            
+            Quisque tellus turpis, ornare vitae lacus et, vehicula volutpat lectus. Etiam id ullamcorper sem. Mauris eros mauris, pellentesque et imperdiet at, porttitor at velit. Donec scelerisque vehicula feugiat. Donec vestibulum sed ligula nec fermentum. Praesent nec purus nec elit varius porta ut id ligula. Sed luctus, lacus id viverra rhoncus, dolor felis dignissim tellus, vitae tristique ipsum velit non elit. Curabitur odio mi, tincidunt quis convallis ac, congue in nibh. Vivamus rhoncus eros arcu, id commodo velit auctor et. Suspendisse volutpat libero non ante luctus ornare. Sed sagittis iaculis massa vitae fringilla. Fusce mauris purus, euismod sed sodales vitae, tempus eu dolor. Mauris et convallis nibh. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Curabitur eleifend, arcu nec finibus ullamcorper, erat nunc pretium tortor, pharetra porttitor enim magna sed magna.
+            
+            Vivamus sit amet ex tempor, dapibus ante nec, volutpat lectus. Sed luctus, mauris in hendrerit volutpat, ligula risus eleifend sapien, at ultrices tellus lacus ac nunc. Mauris in aliquam felis. Curabitur luctus leo at orci maximus, vitae viverra arcu tristique. Duis sed ante eget magna consequat sodales in sed enim. Phasellus tempor vehicula sollicitudin. Proin non nulla id mi fermentum lacinia sit amet sit amet nisl. 
+        </p>
+    </main>
+</body>
+</html>

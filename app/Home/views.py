@@ -69,3 +69,6 @@ def searchItem(request):
             "productDetail": productDetail,
             "foundProducts": foundProducts,
             })
+
+def about(request):
+    return render(request, 'about.html')
