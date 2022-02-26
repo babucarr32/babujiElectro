@@ -8,6 +8,7 @@ from .models import JobsConfig
 def homePage(request):
     databaseInfo = JobsConfig.objects.all()
     i = 10
+    
     return render(request, 
                 "index.html",
                 {"jobs": databaseInfo,
@@ -23,6 +24,9 @@ def productInfo(request, pk):
             productImage = i.image
             productPrice = i.price
             productDetail = i.detail
+            if productPrice == 0:
+                        print("Out of stock----------------------------------------------------------------------------------------")
+
     return render(request, 
             "productInfo/productInfo.html",
             {"x": databaseInfo,
@@ -57,6 +61,9 @@ def searchItem(request):
                     productPrice = item.price
                     productDetail = item.detail
                     foundProducts.append(item)
+
+                    if productPrice == 0:
+                        print("Out of stock----------------------------------------------------------------------------------------")
 
 
     return render(

@@ -114,7 +114,11 @@
           <h3>{{ productName }}</h3>
           <div class="productInfo">
             <div class="productPrice">
-              <h5><b>Price: </b>D{{ productPrice }}</h5>
+              {% if productPrice == 0 %}
+              <h5 style="color: red;">OUT OF STOCK</h5>
+              {% else %}
+                <h5>Price: D{{ productPrice }}</h5>
+              {% endif %}
             </div>
           </div>
         </div>
