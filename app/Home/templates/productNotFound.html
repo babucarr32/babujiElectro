@@ -38,42 +38,52 @@
 
       .site-header{
           background-color: rgba(0, 0, 0, .85);
+          height: 55px;
+          width: 100%;
       }
       .site-header a {
         color: #8e8e8e;
         transition: color .15s ease-in-out;
         margin-right: 20px;
       }
-      
-      .HeaderItemsMain{}
+
+      .mainHeaderItem{
+          max-width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+      }
+
+      #homePage{
+          padding-left: 50px;
+          font-size: 4vh;
+          height: 100%;
+      }
 
       .HeaderItems{
         display: flex;
         justify-content: right;
-      }
-
-      .HItems{
-        margin-right: 20px;
-        margin-top: 17px;
+        height: 100%;
       }
 
       .searchForm{
         display: flex;
         align-items: center;
         justify-content: right;
+        width: 100%;
+        height: 100%;
       }
 
       .searchBar{
-        height: 40px;
+        height: 35px;
         background: rgba(0, 0, 0, .2);
         color: rgba(255, 255, 255, .7);
-        background-image: url("{% static 'outline_search_white_24dp.png' %}");
         background-position: 10px 12px;
         background-repeat: no-repeat;
-        width: 65%;
+        width: 150px;
         font-size: 16px;
-        padding: 12px 20px 12px 40px;
         border: 1px solid #ddd;
+        padding-left: 5px;
         margin: 0px 10px 10px 0px;
       }
 
@@ -89,53 +99,25 @@
         background: none; 
         color: white;
         border: none;
-        margin: 0px 30px -10px 0px;
+        padding-right: 20px;
       }
 
-      .intro{
-        background: rgba(0, 0, 0,0.85);
+      .notFound{
+          width: 100%;
+          height: 250px;
+          background: rgba(255, 0, 0, .85) ;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      #notFoundText{
+          font-size: 5vw;
+          color: white;
+          text-align: center;
+          font-family: "consolas";
       }
 
-      .mainBg {
-          position: absolute;
-          background-image: url("{% static 'yogesh-phuyal-mjwGKmwkDDA-unsplash.jpg' %}");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: cover;
-          opacity: 0.8;
-      }
-      #fontTitleText{
-        display: inline;
-        color: white;
-        font-size: 12vw;
-        padding: 10px;
-        font-family: 'calibri';
-      }
-
-      .subfontTitleText{
-        display: inline;
-        color: white;
-        font-size: 2vw;
-      }
-      
-      .gridProducts{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-gap: 20px;
-        width: 100%;
-        height: 100%;
-        padding: 20px;
-      }
-
-      .productName{
-        background: rgba(0, 0, 0, .85);
-        text-align: center;
-        color: rgb(255, 255, 255);
-        width: 100%;
-        height: 50px;
-      }
-
-    </style>
+</style>
 
     
     <!-- Custom styles for this template -->
@@ -145,56 +127,26 @@
   </head>
 <body>
     
-<header class="site-header sticky-top py-1">
-  <div class="searchForm">
-    <nav class="HeaderItems">
-      <form class="searchForm" action="{% url 'search' %}">
-        <input class="searchBar" name="itemName" type="text" required placeholder="search">
-        <button type="submit" class="searchButton"> search </button>
-      </form>
-      <a class="HItems" href="#"> Features </a>
-      <a href="#" class="material-icons style HItems"> shopping_cart </a>
-    </nav>
-  </div>
-</header>
+    <header class="site-header sticky-top py-1">
+        <div class="mainHeaderItem">
+            <a id="homePage" href="/">Babuji</a>
+            <div class="searchForm">
+                <nav class="HeaderItems">
+                    <form class="searchForm" action="{% url 'search' %}">
+                    <input class="searchBar" name="itemName" type="text" required placeholder="search">
+                    <button type="submit" class="searchButton"> search </button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+      </header>
 
 <main>
-  <div class="mainBg position-relative overflow-hidden text-center">
-    <div class="intro col-md-9.9 p-lg-5 mx-auto my-5">
-      <div class="fontTitle">
-        <h1 id="fontTitleText"> BabuJi</h1>
-      </div>
-      <div class="subFontTitle">
-        <p class="subfontTitleText ">Welcome to Babuji, where we provide you with all your tech materials.</p>
-      </div>
-      <a class="btn btn-secondary text-black" style="margin-top: 15px;"> <b>Call: +220 3626260</b></a><br>
-      <a class="btn btn-secondary text-black" style="margin-top: 15px;" href="mailto: babucarry@gmail.com"><b>Email</b></a>
-    </div>
-  </div>
-  <div class="gridProducts">
-    {% for item in inStock %}  
-      <div class="grid-item" style="max-width: 100%; max-height: 100%;"> 
-          <a href="/{{ item.id }}/productInfo">
-            <img src="{{ item.image.url }}" alt="" style="max-width: 100%; max-height: 100%;">
-          </a>
-        <div class="productName">
-          <p><b><i>{{ item.name }}</i></b> <br> Price: D{{ item.price }}</p>
+    <div class="notFound">
+        <div>
+        <p id="notFoundText">Sorry, product not found!<p>
         </div>
-      </div>
-    {% endfor %}
-
-    {% for item in outOfStock %}  
-      <div class="grid-item" style="max-width: 100%; max-height: 100%;"> 
-          <a href="/{{ item.id }}/productInfo">
-            <img src="{{ item.image.url }}" alt="" style="max-width: 100%; max-height: 100%;">
-          </a>
-        <div class="productName">
-          <p><b><i>{{ item.name }}</i></b> <br> <span style="color: red;">OUT OF STOCK</span></p>
-        </div>
-      </div>
-    {% endfor %}
     </div>
-
 </main>
 
 <footer class="container py-5">

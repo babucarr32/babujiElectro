@@ -16,12 +16,71 @@
     }
 
     .site-header{
-        background-color: rgba(0, 0, 0, .85);
-    }
-    .site-header a {
-    color: #8e8e8e;
-    transition: color .15s ease-in-out;
-    }
+          background-color: rgba(0, 0, 0, .85);
+          height: 55px;
+          width: 100%;
+      }
+      .site-header a {
+        color: #8e8e8e;
+        transition: color .15s ease-in-out;
+        margin-right: 20px;
+      }
+
+      .mainHeaderItem{
+          max-width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+      }
+
+      #homePage{
+          padding-left: 50px;
+          font-size: 4vh;
+          height: 100%;
+      }
+
+      .HeaderItems{
+        display: flex;
+        justify-content: right;
+        height: 100%;
+      }
+
+      .searchForm{
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        width: 100%;
+        height: 100%;
+      }
+
+      .searchBar{
+        height: 35px;
+        background: rgba(0, 0, 0, .2);
+        color: rgba(255, 255, 255, .7);
+        background-image: url("{% static 'outline_search_white_24dp.png' %}");
+        background-position: 10px 12px;
+        background-repeat: no-repeat;
+        width: 150px;
+        font-size: 16px;
+        padding: 12px 20px 12px 40px;
+        border: 1px solid #ddd;
+        margin: 0px 10px 10px 0px;
+      }
+
+      .searchIcon{
+        margin-top: 10px; 
+        background: none; 
+        color: white;
+        border: none;
+        
+      }
+
+      .searchButton{
+        background: none; 
+        color: white;
+        border: none;
+        padding-right: 20px;
+      }
 
     .imageDiv{
         position: relative;
@@ -66,10 +125,18 @@
     </head>
 <body>
     <header class="site-header sticky-top py-1">
-        <nav class="container d-flex flex-column flex-md-row justify-content-between">
-            <a href="/" style="font-size: 20px; color: white;">BabuJi</a>
-          </a>
-    </header>
+        <div class="mainHeaderItem">
+            <a id="homePage" href="/">Babuji</a>
+            <div class="searchForm">
+                <nav class="HeaderItems">
+                    <form class="searchForm" action="{% url 'search' %}">
+                    <input class="searchBar" name="itemName" type="text" required placeholder="search">
+                    <button type="submit" class="searchButton"> search </button>
+                    </form>
+                </nav>
+            </div>
+        </div>
+      </header>
 
     <main>
         <div class="imageDiv">
@@ -89,5 +156,6 @@
             Vivamus sit amet ex tempor, dapibus ante nec, volutpat lectus. Sed luctus, mauris in hendrerit volutpat, ligula risus eleifend sapien, at ultrices tellus lacus ac nunc. Mauris in aliquam felis. Curabitur luctus leo at orci maximus, vitae viverra arcu tristique. Duis sed ante eget magna consequat sodales in sed enim. Phasellus tempor vehicula sollicitudin. Proin non nulla id mi fermentum lacinia sit amet sit amet nisl. 
         </p>
     </main>
+         
 </body>
 </html>
