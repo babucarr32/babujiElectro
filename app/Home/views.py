@@ -11,11 +11,17 @@ try:
         databaseInfo = JobsConfig.objects.all()
         outOfStock=[]
         inStock=[]
+        calc = []
+        newCalc = 0
         for item in databaseInfo:
             if item.price == 0:
                 outOfStock.append(item)
             else:
                 inStock.append(item)
+                calc.append(item.price)
+        for i in calc:
+            newCalc+=i
+        print(f"-----------------------------{newCalc}")
 
         i = 10
         
